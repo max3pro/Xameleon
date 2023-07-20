@@ -23,17 +23,27 @@ function Update()
 		return
 	end
 
-	local success, weather = pcall( decodeData, json_string )
+	local success, weather = pcall( decode_json, json_string )
 	if not success then
 		print( "Error from weather API: " .. ret )
 		return
 	end
 
-	return tostring( weather.main.temp ) .. '  ' .. tostring( weather.main.pressure ) .. '  ' .. tostring( weather.wind.speed )
+	SKIN:Bang( '!SetVariable', 'weather_icon', weather.weather[1].icon )
+	SKIN:Bang( '!SetVariable', 'weather_description', weather.weather[1].description )
+	SKIN:Bang( '!SetVariable', 'current_temperature', weather.main.temp )
+	SKIN:Bang( '!SetVariable', 'wind_speed', weather.wind.speed )
+	SKIN:Bang( '!SetVariable', 'pressure', weather.main.grnd_level )
+	SKIN:Bang( '!SetVariable', 'humidity', weather.main.humidity )
+	SKIN:Bang( '!SetVariable', 'clouds', weather.clouds.all )
+	SKIN:Bang( '!SetOption', 'MeasureSunrise', 'TimeStamp', weather.sys.sunrise + weather.timezone)
+	SKIN:Bang( '!SetOption', 'MeasureSunset', 'TimeStamp', weather.sys.sunset + weather.timezone)
+
+	-- return tostring( weather.main.temp ) .. '  ' .. tostring( weather.main.grnd_level ) .. '  ' .. tostring( weather.wind.speed )
 end
 
 
-function decodeData( json_string )
+function decode_json( json_string )
 	print( json_string )
 	return json_decode( json_string )
 end
