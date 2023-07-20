@@ -1,6 +1,8 @@
 function Initialize()
 	dofile( SKIN:GetVariable( '@' )..'Lua\\json.lua' )
 	measure = SKIN:GetMeasure( "MeasureGetData" )
+	print( measure:GetOption('URL', 'API Url error') )
+	
 	first_run = true
 end
 
@@ -21,13 +23,13 @@ function Update()
 		return
 	end
 
-	local success, weather_data = pcall( decodeData, json_string )
+	local success, weather = pcall( decodeData, json_string )
 	if not success then
 		print( "Error from weather API: " .. ret )
 		return
 	end
 
-	return tostring( weather_data.current_weather.temperature ) .. '  ' .. tostring( weather_data.current_weather.windspeed )
+	return tostring( weather.main.temp ) .. '  ' .. tostring( weather.main.pressure ) .. '  ' .. tostring( weather.wind.speed )
 end
 
 
