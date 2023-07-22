@@ -11,7 +11,7 @@ function Initialize()
 	
 	Source = SKIN:GetMeasure(SELF:GetOption('Source', ''))
 	OldValue = nil
-	print("Fade "..SELF:GetOption('Source', '').." in ".. FadeTime.. "ms in steps of ".. Timestep.. "ms.")
+	-- print("Fade "..SELF:GetOption('Source', '').." in ".. FadeTime.. "ms in steps of ".. Timestep.. "ms.")
 end
 
 function Update()
