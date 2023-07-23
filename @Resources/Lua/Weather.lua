@@ -32,8 +32,9 @@ function Update()
 	SKIN:Bang( '!SetVariable', 'pressure', weather.main.grnd_level )
 	SKIN:Bang( '!SetVariable', 'humidity', weather.main.humidity )
 	SKIN:Bang( '!SetVariable', 'cloudiness', weather.clouds.all )
-	SKIN:Bang( '!SetOption', 'MeasureSunrise', 'TimeStamp', weather.sys.sunrise + weather.timezone)
-	SKIN:Bang( '!SetOption', 'MeasureSunset', 'TimeStamp', weather.sys.sunset + weather.timezone)
+	SKIN:Bang( '!SetOption', 'MeasureVisibilty', 'Formula', weather.visibility)
+	SKIN:Bang( '!SetOption', 'MeasureSunrise', 'Timestamp', weather.sys.sunrise + weather.timezone)
+	SKIN:Bang( '!SetOption', 'MeasureSunset', 'Timestamp', weather.sys.sunset + weather.timezone)
 end
 
 
