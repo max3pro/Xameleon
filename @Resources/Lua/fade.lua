@@ -35,13 +35,13 @@ function Update()
 			-- We're starting a new fade! We've been sitting at Accum == 0 so skip that.
 			Accum = 0
 			CurrentValue = DoFade(OldValue, NewValue, Accum / FadeTime)
-			print("Fading "..OldValue.." to "..NewValue);
+			-- print("Fading "..OldValue.." to "..NewValue);
 		end
 		
 		-- Check if we're done fading
 		if CurrentValue == NewValue
 		then
-			print("Done fading "..OldValue.." to "..NewValue);
+			-- print("Done fading "..OldValue.." to "..NewValue);
 			OldValue = NewValue
 		end
 	end

@@ -22,8 +22,7 @@ function Update()
 	end
 
 	SKIN:Bang( '!SetVariable', 'weather_icon', weather.weather[1].icon )
-	SKIN:Bang( '!SetVariable', 'weather_description1', weather.weather[1].description:sub(1,1) )
-	SKIN:Bang( '!SetVariable', 'weather_description2', weather.weather[1].description:sub(2) )
+	SKIN:Bang( '!SetVariable', 'weather_description', weather.weather[1].description )
 	SKIN:Bang( '!SetVariable', 'temperature', weather.main.temp )
 	SKIN:Bang( '!SetVariable', 'temperature_feels', weather.main.feels_like )
 	SKIN:Bang( '!SetVariable', 'wind_speed', weather.wind.speed )
