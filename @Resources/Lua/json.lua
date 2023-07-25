@@ -21,7 +21,6 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --
-print('json.lua included')
 
 local json = { _version = "0.1.2" }
 

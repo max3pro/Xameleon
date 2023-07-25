@@ -1,7 +1,7 @@
 function Initialize()
 	dofile( SKIN:GetVariable( '@' )..'Lua\\json.lua' )
 	measure = SKIN:GetMeasure( "MeasureGetCurrentData" )
-	print( '[Current] ' .. measure:GetOption('URL', 'API Url error') )
+	-- print( '[Current] ' .. measure:GetOption('URL', 'API Url error') )
 	
 end
 
@@ -38,6 +38,6 @@ end
 
 
 function decode_json( json_string )
-	print( json_string )
+	-- print( json_string )
 	return json_decode( json_string )
 end
